@@ -1,7 +1,13 @@
 from flask import Flask
 
 app = Flask(__name__)
+
 nombre = "Hiyadir Barrera"
+
+@app.route('/api/status')
+def status():
+    return {"status": "ok", "entorno": "contenedor-docker", "version": "1.1.0"}
+
 
 @app.route('/')
 def index():
